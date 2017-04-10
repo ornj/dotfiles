@@ -1,0 +1,54 @@
+[user]
+    name = Stephen Hurwitz
+    email = steve@stevehurwitz.com
+
+[help]
+    autocorrect = 1
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+    pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = always
+
+[color "diff"]
+    meta = yellow bold
+    commit = green bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "diff-highlight"]
+    oldNormal = "red bold"
+    oldHighlight = "red bold 52"
+    newNormal = "green bold"
+    newHighlight = "green bold 22"
+
+[alias]
+    br = branch
+	ci = commit -s -v
+	co = checkout
+	di = diff
+	st = status
+
+[push]
+	default = current
+
+[branch]
+	autosetuprebase = always
+
+[merge]
+	conflictstyle = diff3
+
+[credential]
+	helper = osxkeychain
+
+[github]
+	user = ornj
