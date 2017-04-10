@@ -1,7 +1,7 @@
 # Setup local system and make it ready for primetime.
 
 BREW_URL := "https://raw.githubusercontent.com/Homebrew/install/master/install"
-DEST     := $(HOME)/repositories/dotfiles/test
+DEST     := $(HOME)/
 
 # Install Homebrew and formulae
 brew:
