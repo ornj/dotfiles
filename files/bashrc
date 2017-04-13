@@ -4,7 +4,7 @@ export PATH="~/bin:/usr/local/bin:$PATH:`yarn global bin`"
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # bash powerline
-source ~/.bash-powerline
+source ~/.bash_powerline
 
 # git completion
 export GIT_PS1_SHOWDIRTYSTATE=1
