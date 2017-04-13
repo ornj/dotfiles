@@ -13,10 +13,8 @@
         "javascript": "jsx"
     },
 
-    // disable default javascript validator replaced by eslint
     "javascript.validate.enable" : false,
 
-    // Terminal
     "terminal.integrated.fontFamily": "",
     "terminal.integrated.fontSize": 14,
     "window.zoomLevel": 0,
@@ -25,6 +23,5 @@
     "workbench.colorTheme": "Afterglow",
     "workbench.iconTheme": "vs-seti",
 
-    // ESLint
     "eslint.autoFixOnSave": true
 }
