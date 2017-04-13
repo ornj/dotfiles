@@ -1,0 +1,30 @@
+{
+    "files.exclude": {
+        "**/.idea": true,
+        "**/*.pyc": true,
+        "**/*/__pycache__": true
+    },
+
+    "editor.fontFamily": "'Inconsolata-g for Powerline', Inconsolata, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 12,
+    "editor.rulers": [80, 120],
+
+    "emmet.syntaxProfiles": { 
+        "javascript": "jsx"
+    },
+
+    // disable default javascript validator replaced by eslint
+    "javascript.validate.enable" : false,
+
+    // Terminal
+    "terminal.integrated.fontFamily": "",
+    "terminal.integrated.fontSize": 14,
+    "window.zoomLevel": 0,
+    "workbench.activityBar.visible": true,
+    "editor.wordWrap": "off",
+    "workbench.colorTheme": "Afterglow",
+    "workbench.iconTheme": "vs-seti",
+
+    // ESLint
+    "eslint.autoFixOnSave": true
+}
