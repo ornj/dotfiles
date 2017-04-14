@@ -10,6 +10,7 @@ brew-install:
 
 # Install Homebrew and formulae
 brew-formulae:
+	brew install autoconf pkg-config
 	brew install \
 		bash-completion \
 		cask \
@@ -40,7 +41,6 @@ brew-cask:
 		alfred \
 		caffeine \
 		docker \
-		docker-completion \
 		dropbox \
 		flux \
 		firefox \
@@ -51,11 +51,9 @@ brew-cask:
 		sequel-pro \
 		spectacle \
 		spotify \
-		trash \
 		vlc \
 		virtualbox \
 		visual-studio-code
-	brew cask alfred link
 
 brew-cask-fonts:
 	brew tap caskroom/fonts
