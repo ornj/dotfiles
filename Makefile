@@ -3,7 +3,7 @@
 BREW_URL := "https://raw.githubusercontent.com/Homebrew/install/master/install"
 DEST     := $(HOME)/
 
-brew: brew-install brew-formulae brew-cask brew-cask-fonts brew-link brew-cleanup
+brew: brew-install brew-formulae brew-cask brew-cask-fonts brew-fuzzy-completion brew-cleanup
 
 brew-install:
 	/usr/bin/ruby -e "$$(/usr/bin/curl -fsSL $(BREW_URL))"
@@ -13,10 +13,14 @@ brew-formulae:
 	brew install autoconf pkg-config
 	brew install \
 		bash-completion \
+		bat \
 		cask \
 		diff-so-fancy \
+		docker-compose \
 		git \
+		fd \
 		ffmpeg \
+		fzf \
 		htop-osx \
 		httpie \
 		hub \
@@ -32,35 +36,31 @@ brew-formulae:
 		sqlite \
 		tldr \
 		wget \
-		yarn
+		yarn \
+		zlib
 
 # Install applications I use through brew cask
 brew-cask:
 	brew cask install \
-		1password \
-		alfred \
 		caffeine \
 		docker \
-		dropbox \
 		flux \
-		firefox \
 		google-chrome \
 		iterm2 \
 		skitch \
 		slack \
-		sequel-pro \
 		spectacle \
 		spotify \
+		tableplus \
 		vlc \
-		virtualbox \
 		visual-studio-code
 
 brew-cask-fonts:
 	brew tap caskroom/fonts
 	brew cask install font-inconsolata font-inconsolata-g-for-powerline
 
-brew-link:
-	brew linkapps --local
+brew-fuzzy-completion:
+	$(brew --prefix)/opt/fzf/install
 
 brew-cleanup:
 	brew cleanup
@@ -73,28 +73,31 @@ vscode: vscode-extensions vscode-settings
 
 # Install vscode extensions
 vscode-extensions:
-	code --install-extension DavidAnson.vscode-markdownlint \
-	    --install-extension EditorConfig.EditorConfig \
-	    --install-extension esbenp.prettier-vscode \
-	    --install-extension HookyQR.JSDocTagComplete \
-	    --install-extension PeterJausovec.vscode-docker \
-	    --install-extension QassimFarid.ejs-language-support \
-	    --install-extension andrejunges.Handlebars \
-	    --install-extension bajdzis.vscode-database \
-	    --install-extension christian-kohler.npm-intellisense \
-	    --install-extension dbaeumer.vscode-eslint \
-	    --install-extension donjayamanne.python \
-	    --install-extension flowtype.flow-for-vscode \
-	    --install-extension gerane.Theme-Flatgrammer \
-	    --install-extension gerane.Theme-Afterglow \
-	    --install-extension jpoissonnier.vscode-styled-components \
-	    --install-extension kumar-harsh.graphql-for-vscode \
-	    --install-extension mohsen1.prettify-json \
-	    --install-extension msjsdiag.debugger-for-chrome \
-	    --install-extension shanoor.vscode-nginx \
-	    --install-extension waderyan.gitblame \
-	    --install-extension wholroyd.jinja \
-	    --install-extension zhuangtongfa.Material-theme
+	code \
+    --install-extension andrejunges.Handlebars \
+		--install-extension akamud.vscode-theme-onedark \
+    --install-extension bajdzis.vscode-database \
+    --install-extension christian-kohler.npm-intellisense \
+		--install-extension DavidAnson.vscode-markdownlint \
+		--install-extension eamodio.gitlens \
+    --install-extension dbaeumer.vscode-eslint \
+    --install-extension EditorConfig.EditorConfig \
+    --install-extension esbenp.prettier-vscode \
+    --install-extension flowtype.flow-for-vscode \
+    --install-extension gerane.Theme-Flatgrammer \
+    --install-extension gerane.Theme-Afterglow \
+    --install-extension HookyQR.JSDocTagComplete \
+    --install-extension jpoissonnier.vscode-styled-components \
+    --install-extension kumar-harsh.graphql-for-vscode \
+    --install-extension ms-python.python \
+    --install-extension mohsen1.prettify-json \
+    --install-extension msjsdiag.debugger-for-chrome \
+		--install-extension ms-vscode.go \
+    --install-extension PeterJausovec.vscode-docker \
+    --install-extension QassimFarid.ejs-language-support \
+    --install-extension shanoor.vscode-nginx \
+    --install-extension waderyan.gitblame \
+    --install-extension wholroyd.jinja
 
 # Apply vscode user settings
 vscode-settings:
@@ -102,7 +105,7 @@ vscode-settings:
 
 # Create dotfiles in destination direcory
 link:
-	ln -hfsv $(PWD)/files/bash_powerline $(DEST)/.bash_powerline
+	ln -hfsv $(PWD)/files/bash-powerline.sh $(DEST)/.bash-powerline.sh
 	ln -hfsv $(PWD)/files/bash_profile $(DEST)/.bash_profile
 	ln -hfsv $(PWD)/files/bashrc $(DEST)/.bashrc
 	ln -hfsv $(PWD)/files/gitcompletion $(DEST)/.gitcompletion
