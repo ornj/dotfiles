@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-#!/bin/bash
-
-if [ -f ~/.bashrc ]; then
-   source ~/.bashrc
-fi
-||||||| merged common ancestors
-=======
 #!/bin/bash
 
 if [ -f ~/.bashrc ]; then
@@ -15,5 +7,3 @@ fi
 if [ -f ~/.controllerrc ]; then
     source ~/.controllerrc
 fi
-
->>>>>>> updated scripts after using for F5 laptop
