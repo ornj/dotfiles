@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ -f ~/.bashrc ]; then
-   source ~/.bashrc
+  source ~/.bashrc
 fi
 
 if [ -f ~/.controllerrc ]; then
-    source ~/.controllerrc
+  source ~/.controllerrc
 fi

@@ -44,6 +44,7 @@ brew-cask:
 	brew cask install \
 		caffeine \
 		docker \
+		firefox \
 		flux \
 		google-chrome \
 		iterm2 \
@@ -57,7 +58,10 @@ brew-cask:
 
 brew-cask-fonts:
 	brew tap caskroom/fonts
-	brew cask install font-inconsolata font-inconsolata-g-for-powerline
+	brew cask install \
+		font-inconsolata \
+		font-inconsolata-g-for-powerline \
+		font-ubuntu
 
 brew-fuzzy-completion:
 	$(brew --prefix)/opt/fzf/install
